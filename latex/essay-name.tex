@@ -1,0 +1,27 @@
+\documentclass[12pt, a4paper, final, onecolumn, titlepage]{article}
+\input{includes/packages.tex}
+\input{includes/formatting.tex}
+\addbibresource{citations.bib}
+
+% Document Metadata
+\title{\textbf{\textsc{\LaTeX \\ Essay Template}} \\ Version 2.0, with makefile}
+\author{By Shen Zhou Hong \and UWC Changshu China}
+\date{\today}
+
+% Document Begins
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+
+% Actual Content Begins.
+\input{sections/body.tex}
+
+% Bibliography and Appendix
+\clearpage
+\nocite{*}
+\section{Bibliography}
+\printbibliography[heading=none]
+
+% Document Ends
+\end{document}
