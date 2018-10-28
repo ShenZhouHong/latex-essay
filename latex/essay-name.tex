@@ -41,10 +41,12 @@
 % Document Begins
 \begin{document}
 \maketitle
-\tableofcontents
-\clearpage
+% \tableofcontents Optional table-of-contents
+% \clearpage clears page on table of contents so content starts on new page.
 
-% Actual Content Begins.
+% Includes content body. If the essay is very long, it might make sense to split
+% the content across multiple .tex files, and include them all here, e.g.
+% \input{sections/preamble.tex}
 \input{sections/body.tex}
 
 % Bibliography and Appendix
