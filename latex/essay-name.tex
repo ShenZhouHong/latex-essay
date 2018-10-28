@@ -49,11 +49,14 @@
 % \input{sections/preamble.tex}
 \input{sections/body.tex}
 
-% Bibliography and Appendix
-\clearpage
+% Lists all works in the citations.bib file in the bibliography, even if some
+% where not cited using inline citations.
 \nocite{*}
-\section{Bibliography}
+
+% Creates Bibliography on new page. By default \printbibliography creates the
+% 'Works Cited' heading. By suppressing it, we are able to use our own heading.
+\clearpage
+\section*{Bibliography}
 \printbibliography[heading=none]
 
-% Document Ends
 \end{document}
