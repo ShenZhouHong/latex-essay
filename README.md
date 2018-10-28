@@ -70,3 +70,10 @@ For an overview of how to populate biblatex `citations.bib` files, visit the
 biblatex-mla manual at CTAN.
 
 * https://www.ctan.org/pkg/biblatex-mla
+
+### GPLv3 License
+The raw template itself is licensed under the terms of the GPL (version 3). A
+full copy of the license is attached in `LICENSE.md`. Naturally, any works
+that you create using this template (i.e. any actual essays you write using
+it) will be your own intellectual property. The GPLv3 license only applies to
+any derivative templates.
