@@ -14,14 +14,28 @@
 % You should have received a copy of the GNU General Public License
 % along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-\documentclass[12pt, a4paper, final, onecolumn, titlepage]{article}
+% For more information on documentclass configuration, see:
+% https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/#formula
+\documentclass[
+  12pt,       % 10pt, 11pt, 12pt
+  a4paper,    % a4paper, letterpaper, a5paper, b5paper, executivepaper, legalpaper
+  final,      % draft
+  onecolumn,  % twocolumn
+  oneside,    % twoside
+  notitlepage % titlepage
+]{article}
+
 \input{includes/packages.tex}
 \input{includes/formatting.tex}
 \addbibresource{citations.bib}
 
 % Document Metadata
-\title{\textbf{\textsc{\LaTeX \\ Essay Template}} \\ Version 2.0, with makefile}
-\author{By Shen Zhou Hong \and UWC Changshu China}
+\title{
+  \textbf{\textsc{\LaTeX \\ Essay Template}} \\ Version 2.0, with makefile
+}
+\author{
+  By Shen Zhou Hong \and UWC Changshu China
+}
 \date{\today}
 
 % Document Begins
