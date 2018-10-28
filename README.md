@@ -4,6 +4,8 @@ humanities (i.e. philosophy, history). It's configured to use biblatex for
 citation management, and outputs citations (as well as inline citations) in the
 MLA format.
 
+![Example of how the compiled template looks like](example.png)
+
 It is designed to be modular, with the mains scaffold of the template located at
 `latex/essay-name.tex`, which falls in additional includes at `latex/includes`,
 and content at `latex/sections`. This way, when working on relatively longer
