@@ -17,24 +17,25 @@
 % For more information on documentclass configuration, see:
 % https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/#formula
 \documentclass[
-  12pt,       % 10pt, 11pt, 12pt
-  a4paper,    % a4paper, letterpaper, a5paper, b5paper, executivepaper, legalpaper
+  10pt,       % 10pt, 11pt, 12pt
+  letterpaper,    % a4paper, letterpaper, a5paper, b5paper, executivepaper, legalpaper
   final,      % draft
   onecolumn,  % twocolumn
   oneside,    % twoside
   notitlepage % titlepage
 ]{article}
 
+% Included documents in the preamble. Caution: Their order is important!
 \input{includes/packages.tex}
 \input{includes/formatting.tex}
-\addbibresource{citations.bib}
+% \addbibresource{citations.bib} Biblatex. See includes/formatting.tex
 
 % Document Metadata
 \title{
-  \textbf{\textsc{\LaTeX \\ Essay Template}} \\ Version 2.0, with makefile
+  \textbf{\textsc{\LaTeX\ Essay Template}} \\ Version 3.0, with makefile
 }
 \author{
-  By Shen Zhou Hong \and UWC Changshu China
+  By Shen Zhou Hong \and St. John's College
 }
 \date{\today}
 
@@ -48,15 +49,7 @@
 % the content across multiple .tex files, and include them all here, e.g.
 % \input{sections/preamble.tex}
 \input{sections/body.tex}
-
-% Lists all works in the citations.bib file in the bibliography, even if some
-% where not cited using inline citations.
-\nocite{*}
-
-% Creates Bibliography on new page. By default \printbibliography creates the
-% 'Works Cited' heading. By suppressing it, we are able to use our own heading.
 \clearpage
-\section*{Bibliography}
-\printbibliography[heading=none]
+\input{sections/endpage.tex}
 
 \end{document}

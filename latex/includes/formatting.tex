@@ -1,7 +1,24 @@
-% Fine-tuned hyphenation rules to discourage excessive hyphenation.
+% Settings used by \usepackage{microtype}
+% These custom hyphenation rules are used to discourage excessive hyphenation
 \pretolerance=5000
 \tolerance=9000
 \emergencystretch=0pt
 \righthyphenmin=4
 \lefthyphenmin=4
-\setlength{\parindent}{3em} % Paragraph indentation
+\microtypecontext{spacing=nonfrench}
+
+% Settings used by \usepackage{setspace}
+% These commands are used to change the line-spacing of the text.
+% Use \linespread{1.25} for custom line spacing.
+% See documentation at https://tex.stackexchange.com/questions/65849/
+% \doublespacing  for double-spacing
+\onehalfspacing % for 1.5 spacing
+
+% Settings used by \usepackage[parfill]{parskip}
+\setlength{\parindent}{3em} % Paragraph indentation. Set to 0em to disable.
+
+% Settings used by \usepackage{titling}
+% The following command is used to "hang" the default LaTeX title from the top
+% of the page (e.g. like a painting frame). The default LaTeX title sits a bit
+% too low, so the following command sets it higher.
+\setlength{\droptitle}{-4em}   % This is your set screw
