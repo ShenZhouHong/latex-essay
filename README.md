@@ -1,6 +1,6 @@
 # Basic LaTeX Essay Template
 This is an LaTeX essay template that's fairly useful for writing essays in the
-humanities (i.e. philosophy, history). It's configured to use biblatex for
+humanities (i.e. philosophy, history). It's configured to use `biblatex` for
 citation management, and outputs citations (as well as inline citations) in the
 MLA format.
 
@@ -19,7 +19,7 @@ writing process. This way, these files can be tracked into version-control as
 well.
 
 ## Quickstart
-In order to customize this LaTeX template file to your project, simply rename
+In order to customise this LaTeX template file to your project, simply rename
 the `essay-name.tex` file, and than edit the the included makefile to point at
 the right file again:
 
@@ -28,7 +28,7 @@ the right file again:
 # Makefile for latexmk
 source_name = essay-name
 ```
-### Compiling document
+## Compiling document
 In order to compile latex source files, run `make` in the terminal:
 ```
 cd latex
@@ -40,7 +40,7 @@ Note: for any partial compiles where compilation fails at a certain point, you
 should run `make clean` followed by make again. Trying to run make after a
 failed compile would result in additional errors.
 
-### Dependencies
+## Dependencies
 This template uses a makefile to compile the latex source files. The makefile
 uses `latexmk`, which runs latex the correct number of times. This is because
 due to the presense of figures, tables, and biblatex databases, latex needs to
