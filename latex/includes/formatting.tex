@@ -9,24 +9,31 @@
 
 % Settings used by \usepackage{setspace}
 % These commands are used to change the line-spacing of the text.
-% Use \linespread{1.25} for custom line spacing.
 % See documentation at https://tex.stackexchange.com/questions/65849/
-% \doublespacing  for double-spacing
-\onehalfspacing % for 1.5 spacing
+% \doublespacing    % for double-spacing
+% \linespread{1.25} % for custom line spacing.
+\onehalfspacing   % for 1.5 spacing
+
 
 % Settings used by \usepackage[parfill]{parskip}
-\setlength{\parindent}{3em} % Paragraph indentation. Set to 0em to disable.
+% Paragraph indentation. Set to 0em to disable.
+\setlength{\parindent}{3em}
 
 % Settings used by \usepackage{titling}
 % The following command is used to "hang" the default LaTeX title from the top
 % of the page (e.g. like a painting frame). The default LaTeX title sits a bit
 % too low, so the following command sets it higher.
-\setlength{\droptitle}{-4em}   % This is your set screw
+\setlength{\droptitle}{-4em}
 
 % Settings used by \usepackage{hyperref}
+% Used to setup hyperlinks, as well as to properly annotate PDF metadata
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
-  urlcolor=blue
+  urlcolor=blue,
+  pdfsubject={PDF Subject},
+  pdfkeywords={Keywords},
+  pdfproducer={Latex with Hyperref},
+  pdfcreator={XeLaTeX}
 }
 \urlstyle{sf}
