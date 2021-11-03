@@ -1,0 +1,52 @@
+% Templates for typesetting algorithms and pseudocode
+\begin{algorithm}
+  \caption{Euclid’s algorithm}
+  \label{euclid}
+  \begin{algorithmic}[1]
+    \Function{Euclid}{$a,b$}
+      \Comment{The g.c.d. of a and b}
+      \State $r\gets a\bmod b$
+      \While{$r\not=0$}\Comment{We have the answer if r is 0}
+        \State $a\gets b$
+        \State $b\gets r$
+        \State $r\gets a\bmod b$
+      \EndWhile
+      \label{euclidendwhile}
+      \State \textbf{return} $b$\Comment{The gcd is b}
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+% Blank template
+\begin{algorithm}
+  \begin{algorithmic}[0]
+    \Function{CheckColumn}{puzzle, j}
+      \State \ldots\
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+% Blank minted template (for formatting python source code)
+\begin{listing}[h]
+  \begin{minted}[baselinestretch=1.0, frame=lines, mathescape, fontfamily=helvetica]{python}
+def CheckColumn(puzzle, j):
+  return False
+  \end{minted}
+\end{listing}
+
+% side-by-side template
+\begin{algorithm}
+  \centering
+  \begin{minipage}{0.50\textwidth}
+  	\centering
+  	\begin{algorithmic}[0]
+  		% pseudocode goes here
+  	\end{algorithmic}
+  \end{minipage}\hfill
+  \begin{minipage}{0.50\textwidth}
+  	\centering
+  	\begin{minted}[baselinestretch=1.0, frame=lines, mathescape, fontfamily=helvetica]{python}
+  		# python goes here
+  	\end{minted}
+  \end{minipage}
+\end{algorithm}

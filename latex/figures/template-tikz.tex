@@ -1,0 +1,23 @@
+% Template for an lambert quadrilateral, using tkz-euclide
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    % External vertices
+    \tkzDefPoint(0,0){A}
+    \tkzDefPoint(8,0){B}
+    \tkzDefPoint(0,4){C}
+    \tkzDefPoint(8,4){D}
+    \tkzDrawPoints(A,B,C,D)
+    \tkzDrawPolygon(A,B,D,C)
+    \tkzLabelPoints[above](C,D)
+    \tkzLabelPoints[below](A,B)
+
+    % Mark Angles
+    \tkzMarkAngle[size=0.4, mark=none](A,C,D)
+    \tkzMarkRightAngle[size=0.4, mark=none](C,D,B)
+    \tkzMarkRightAngle[size=0.4](C,A,B)
+    \tkzMarkRightAngle[size=0.4](A,B,D)
+  \end{tikzpicture}
+  \caption{Lambert quadrilateral}
+  \label{lambert-1}
+\end{figure}

@@ -28,7 +28,9 @@ the right file again:
 # Makefile for latexmk
 source_name = essay-name
 ```
+
 ## Compiling document
+
 In order to compile latex source files, run `make` in the terminal:
 ```
 cd latex
