@@ -222,3 +222,6 @@ TSWLatexianTemp*
 
 # MacOS DS_Store file
 .DS_Store
+
+# XML Document Metadata (Generated during make)
+*.xmpi
