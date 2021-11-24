@@ -7,14 +7,15 @@ all: $(source_name).pdf
 
 # MAIN LATEXMK RULE
 $(source_name).pdf: $(source_name).tex
-	# This makefile uses xelatex by default. This way, it supports unicode
+	# This makefile uses lualatex by default. This way, it supports unicode
 	# characters in the latex source files. If you wish to use latex instead of
-	# xelatex, simply remove the -xelatex argument
-	latexmk -pdf -xelatex -use-make $<
+	# lualatex, simply remove the -lualatex argument
 
-	# For syntax highlighting with minted, enable -use-shell-escape:
-	latexmk -pdf -xelatex -use-shell-escape -use-make $<
-	
+	latexmk -pdf -lualatex -use-make $<
+
+	# For syntax highlighting with minted, enable -shell-escape:
+	# latexmk -pdf -lualatex -shell-escape -use-make $<
+
 clean:
 	latexmk -c
 
