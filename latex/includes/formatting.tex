@@ -7,12 +7,12 @@
 }
 \date{\today}
 
-% Header Content (fancyhdr)
+% Settings used by \usepackage{fancyhdr}
+% Header Content
 \pagestyle{fancyplain}
 \lhead{Left Header}
 \chead{Center Header}
 \rhead{Right Header}
-
 % Footer Content
 \lfoot{Left Footer}
 \cfoot{Page \thepage\ of \pageref*{LastPage}}
@@ -56,3 +56,36 @@
 % Settings used by \usepackage{pgfplots}
 % \pgfplotsset{compat=1.17}
 % \pgfplotsset{samples=300}
+
+% Settings used by titlesec
+% For section, subsection, and subsubsection numberings to be in margin.
+% Sourced from: https://tex.stackexchange.com/a/523014
+\newcommand{\marginsecnumber}[1]{%
+  \makebox[0pt][r]{#1\hspace{6pt}}%
+}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\marginsecnumber\thesection}
+  {0pt}
+  {}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\marginsecnumber\thesubsection}
+  {0pt}
+  {}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {\marginsecnumber\thesubsubsection}
+  {0pt}
+  {}
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\bfseries}
+  {\marginsecnumber\theparagraph}
+  {0pt}
+  {}
+\titleformat{\subparagraph}[runin]
+  {\normalfont\normalsize\bfseries}
+  {\marginsecnumber\thesubparagraph}
+  {0pt}
+  {}
+\titlespacing*{\subsection}{0pt}{*3.25}{*1.5}%
