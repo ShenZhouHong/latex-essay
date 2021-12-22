@@ -25,22 +25,32 @@
   notitlepage % titlepage
 ]{article}
 
-% Included documents in the preamble. Caution: Their order is important!
-\input{includes/packages.tex}
-\input{includes/formatting.tex}
-% \addbibresource{citations.bib} Biblatex. See includes/formatting.tex
+% Template preamble files. These should not be modified.
+\input{template/packages.tex}
+\input{template/formatting.tex}
+
+% Project-specific preamble files. Include additional packages here.
+\input{configuration.tex}
+
+% Document Title, Author, and Date
+\title{
+  \LaTeX\ Essay Template \\ for the Humanities and Sciences
+}
+\author{
+  Shen Zhou Hong \and Institution
+}
+\date{\today}
 
 % Document Begins
 \begin{document}
 \maketitle
-% \tableofcontents Optional table-of-contents
-% \clearpage clears page on table of contents so content starts on new page.
+% \tableofcontents % Optional table-of-contents
+% \clearpage
 
 % Includes content body. If the essay is very long, it might make sense to split
 % the content across multiple .tex files, and include them all here, e.g.
 % \input{sections/preamble.tex}
 \input{sections/body.tex}
-\clearpage
-\input{sections/endpage.tex}
+\include{sections/endpage.tex}
 
 \end{document}
