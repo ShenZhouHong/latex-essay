@@ -23,6 +23,17 @@
 % \usepackage{xeCJK}                  % For typesetting CJK characters
 % \usepackage[l2tabu, orthodox]{nag}  % Verbose warnings for typesetting
 
+% Settings used by \usepackage{fancyhdr}
+% Header Content
+\pagestyle{fancyplain}
+\lhead{Left Header}
+% \chead{Center Header}
+\rhead{Right Header}
+% Footer Content
+% \lfoot{Left Footer}
+\cfoot{Page \thepage\ of \pageref*{LastPage}}
+% \rfoot{Right Footer}
+
 % The biblatex package should go last!
 % FYI: the biblatex package is used to generate a bibliography. However, unless
 % intense citation management (e.g. 5+ sources) is used, biblatex should not
