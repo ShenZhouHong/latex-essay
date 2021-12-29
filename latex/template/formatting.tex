@@ -26,16 +26,30 @@
 
 % Settings used by \usepackage{microtype}
 % These custom hyphenation rules are used to discourage excessive hyphenation
-\pretolerance=5000
-\tolerance=9000
-\emergencystretch=0pt
-\righthyphenmin=4
-\lefthyphenmin=4
-\microtypecontext{spacing=nonfrench}
+\microtypesetup{
+  protrusion = true,
+  expansion  = true,
+  tracking   = true,
+  factor     = 1000,
+  patch      = all,
+  final
+}
 
-% Settings used by \usepackage{pgfplots}
-% \pgfplotsset{compat=1.17}
-% \pgfplotsset{samples=300}
+% Custom protrusion rules to allow hanging punctuation
+\SetProtrusion
+{ encoding = *}
+{
+  \textquotedblleft = {1000, },
+  \textquotedblright = { ,1000},
+  \quotedblbase = {1000, }, % = „
+  . = { , 1000},
+  {,} = { , 1000},
+  « = {1000, },
+  » = { ,1000},
+  ( = {1000, },
+  ) = { ,1000},
+  - = { ,500}
+}
 
 % Settings used by titlesec
 % For section, subsection, and subsubsection numberings to be in margin.

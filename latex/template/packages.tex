@@ -1,13 +1,17 @@
 % General packages in use
-\usepackage[factor=2000]{microtype}
+\usepackage{fontspec}               % LuaLaTeX font support
+\usepackage{libertinus-otf}         % Beautiful libertinus font
+
+\usepackage[pass]{geometry}         % Adjusts for narrower page margins
+\usepackage{microtype}              % Microtypography adjustments
+
 \usepackage{setspace}               % Used to change line and paragraph spacing
 \usepackage{csquotes}               \MakeOuterQuote{"}
-\usepackage[T1]{fontenc}            % Supports international fonts
-\usepackage[osf]{libertine}         % Beautiful libertine font
 \usepackage[parfill]{parskip}       % For empty lines between paragraphs
-\usepackage{hyperref}               % So citations can be links
 \usepackage[compact]{titlesec}      % Sets section titles to be more compact
 \usepackage{titling}                % In order to make the title higher on page
 \usepackage{xcolor}                 % To make URL links blue
 \usepackage{fancyhdr}               % For fancy headings
 \usepackage{lastpage}               % Gives us \lastpage
+
+\usepackage{hyperref}               % So citations can be links

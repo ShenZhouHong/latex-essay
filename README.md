@@ -20,13 +20,13 @@ well.
 
 ## Quickstart
 In order to customise this LaTeX template file to your project, simply rename
-the `essay-name.tex` file, and than edit the the included makefile to point at
+the `paper.tex` file, and than edit the the included makefile to point at
 the right file again:
 
 ### makefile
 ```
 # Makefile for latexmk
-source_name = essay-name
+source_name = paper
 ```
 
 ## Compiling document
@@ -51,21 +51,17 @@ latex installation, but if it is now, you may download it here:
 
 * http://personal.psu.edu/jcc8//software/latexmk-jcc/
 
-Additionally, this template uses XeLaTeX by default, as it allows the inclusion
-of unicode characters in the latex source files. If XeLaTeX is not installed, or
-plain LaTeX is required, simply alter the `makefile` at the appropriate call:
+Additionally, this template uses LuaLaTeX by default, as it allows
+the inclusion of unicode characters in the latex source files. If XeLaTeX is
+not installed, or plain LaTeX is required, simply alter the `makefile` at the
+appropriate call:
 
 ```
 # MAIN LATEXMK RULE
 $(source_name).pdf: $(source_name).tex
   ...
-	latexmk -pdf -xelatex -use-make $<
+	latexmk -pdf -lualatex -use-make $<
 ```
-
-XeLaTeX allows one to use foreign characters like ü or æ natively in the latex
-source files, though. So it's probably a good idea to install XeLaTeX:
-
-* http://xetex.sourceforge.net/
 
 ### Related documentation
 For an overview of how to populate biblatex `citations.bib` files, visit the
