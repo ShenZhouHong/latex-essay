@@ -1,0 +1,59 @@
+\begin{figure}[H]
+  \begin{tikzpicture}[trim axis left]
+      % All the graphing elements are inside axis environment
+      \begin{axis}[
+          width=\textwidth,
+          height=7cm,
+          scale only axis,
+          title={Graph Title Here},
+          xlabel={Graph X-Axis Label},
+          ylabel={Graph Y-Axis Label},
+          xmin=0, xmax=350,
+          ymin=0, ymax=10,
+          grid=both,
+          minor tick num=1,
+          grid style=dotted,
+          legend pos=south east,
+          x tick label style={
+            /pgf/number format/fixed,
+            /pgf/number format/fixed zerofill,
+            /pgf/number format/precision=2
+          },
+          y tick label style={
+            /pgf/number format/fixed,
+            /pgf/number format/fixed zerofill,
+            /pgf/number format/precision=2
+          },
+      ]
+
+          % CSV Data Table Plot Example
+          \addplot[
+            only marks,
+            color=blue,
+            mark=*,
+          ]
+          table[
+            col sep=comma,
+            header=false,
+            x index=0,
+            y index=1
+          ]{table-data-filepath.csv};
+          \addlegendentry{Plot Entry Legend Label 1}
+
+          % Equation Plot Example
+          \addplot[
+            color=blue,
+            no marks,
+            solid,
+            thick,
+            domain=0:90
+          ]
+          {
+            9.10 * cos(x)^2
+          };
+          \addlegendentry{Plot Entry Legend Label 2}
+      \end{axis}
+  \end{tikzpicture}
+  \caption{Graph Caption Here}
+  \label{graph:label-here}
+\end{figure}
