@@ -1,11 +1,13 @@
 % Template for including a PDF page as a figure
 \begin{figure}[H]
   \centering
-  \includegraphics[
-    page=1,
-    width=0.5\textwidth,
-    angle=0
-  ]{path/to/pdf.pdf}
+  \fbox{
+    \includegraphics[
+      page=1,
+      width=0.5\textwidth,
+      angle=0
+    ]{path/to/pdf.pdf}
+  }
   \caption{PDF Caption Here}
   \label{fig:pdf}
 \end{figure}
