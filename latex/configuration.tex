@@ -25,6 +25,12 @@
 \usepackage{lipsum}                 % For lorem lipsum placeholder text
 
 % Settings used by \usepackage{fancyhdr}
+
+% Update the plain heading format so that the first page includes page n of m
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \renewcommand{\headrule{}}
+}
 % Header Content
 \pagestyle{fancy}
 \fancyhead[L]{Left Header}
