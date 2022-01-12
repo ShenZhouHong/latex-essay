@@ -29,17 +29,20 @@
 % Update the plain heading format so that the first page includes page n of m
 \fancypagestyle{plain}{
   \fancyhead{}
-  \renewcommand{\headrule{}}
+  \renewcommand{\headrule}{}
 }
-% Header Content
-\pagestyle{fancy}
-\fancyhead[L]{Left Header}
-% \chead{Center Header}
-\fancyhead[R]{Right Header}
-% Footer Content
-% \lfoot{Left Footer}
-\fancyfoot[C]{Page \thepage\ of \pageref*{LastPage}}
-% \rfoot{Right Footer}
+\fancypagestyle{fancy}{
+  % Add a line to the footer as well as the header
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancyhead[L]{Senior Seminar}
+  % \chead{}
+  \fancyhead[R]{St. John's College}
+  % Footer Content
+  % \lfoot{Left Footer}
+  \fancyfoot[C]{Page \thepage\ of \pageref*{LastPage}}
+  % \rfoot{Right Footer}
+}
 
 % Settings used by \usepackage{pgfplots}
 % \pgfplotsset{compat=1.17}
