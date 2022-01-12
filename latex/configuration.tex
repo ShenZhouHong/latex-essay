@@ -44,6 +44,31 @@
   % \rfoot{Right Footer}
 }
 
+% % Custom geometry for larger margin notes with assymetric body layout
+% \newgeometry{
+%   % Preserve the LaTeX default \textwidth and \textheight
+%   textwidth =\textwidth,
+%   textheight=\textheight,
+%   % Include the margin notes space when doing body calculations
+%   includemp=true,
+%   % Increase margin notes width and seperation
+%   marginparwidth=4cm,
+%   marginparsep=0.5cm,
+%   % Center doucment body vertically and horizontally
+%   hcentering=true,
+%   vcentering=true,
+%   % Minor tweaks to header and footer seperation
+%   headsep   =0.5cm,
+%   footskip  =1cm,
+% }
+%
+% % Make sure that the header and footer overhang into the marginnotes area
+% % We must call this everytime we update the page geometry, otherwise the
+% % values WILL be stale!
+% \setlength{\headwidth}{\textwidth}
+% \addtolength{\headwidth}{\marginparsep}
+% \addtolength{\headwidth}{\marginparwidth}
+
 % Settings used by \usepackage{pgfplots}
 % \pgfplotsset{compat=1.17}
 % \pgfplotsset{samples=300}
