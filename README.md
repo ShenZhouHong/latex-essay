@@ -1,13 +1,16 @@
-# Basic LaTeX Essay Template
+# LaTeX Essay Template
 This is an LaTeX essay template that's fairly useful for writing essays in the
 humanities (i.e. philosophy, history). It's configured to use `biblatex` for
 citation management, and outputs citations (as well as inline citations) in the
 MLA format.
 
+This template has full PDF/A support, which means that the documents it produces
+are archival grade.
+
 ![Example of how the compiled template looks like](example.png)
 
 It is designed to be modular, with the mains scaffold of the template located at
-`latex/essay-name.tex`, which falls in additional includes at `latex/includes`,
+`latex/paper.tex`, which falls in additional includes at `latex/includes`,
 and content at `latex/sections`. This way, when working on relatively longer
 essays, one can have all the textual content organized as multiple files in the
 `latex/sections` folder, and have any custom formatting applied through the
