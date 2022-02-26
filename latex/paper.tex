@@ -27,10 +27,7 @@
 
 % Template preamble files. These should not be modified.
 \input{template/packages.tex}
-
 \input{template/formatting.tex}
-
-\input{template/lua-protrusion.tex}
 
 % Document Title, Author, and Date
 \title{
@@ -44,15 +41,9 @@
 % Document Begins
 \begin{document}
 \maketitle
-% \tableofcontents % Optional table-of-contents
-% \clearpage
+\tableofcontents
 
-% Includes content body. If the essay is very long, it might make sense to split
-% the content across multiple .tex files, and include them all here, e.g.
-% \input{sections/preamble.tex}
-
-\input{sections/body.tex}
-
+\include{sections/body.tex}
 \include{sections/endpage.tex}
 
 \end{document}
