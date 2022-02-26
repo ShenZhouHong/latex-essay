@@ -22,6 +22,31 @@ make
 ```
 
 ## Documentation
+This template is broadly organized into three directories. `template` contains template files. `sections` contain the body of the text. `figures` contains figures, diagrams, and graphs. 
+
+```
+.
+├── example.png
+├── latex
+│   ├── citations.bib
+│   ├── configuration.tex
+│   ├── figures
+│   │   ├── template-*.tex
+│   │   └── ...
+│   ├── makefile
+│   ├── paper.pdf
+│   ├── paper.tex
+│   ├── paper.xmpdata
+│   ├── sections
+│   │   ├── body.tex
+│   │   └── endpage.tex
+│   └── template
+│       ├── formatting.tex
+│       └── packages.tex
+├── LICENSE.md
+└── README.md
+
+```
 
 The body of the text is meant to be included in the `./latex/sections` directory. Begin writing in `./latex/sections/body.tex`, and add additional sections within that directory (e.g. `./latex/sections/introduction.tex`).
 
