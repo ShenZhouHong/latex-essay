@@ -2,8 +2,7 @@
 % Used to setup hyperlinks, as well as to properly annotate PDF metadata
 \hypersetup{
   colorlinks=true,
-  linkcolor=blue,
-  urlcolor=blue,
+  allcolors=blue
 }
 \urlstyle{sf}
 
@@ -40,14 +39,22 @@
   {,} = {    , 1000},
   {«} = {1000,     },
   {»} = {    , 1000},
-  {(} = {1000,     },
-  {)} = {    , 1000},
+  {(} = { 0  ,     },
+  {)} = {    , 0   },
   {-} = {    , 500 },
+  % Double Quotes
   \textquotedblleft
       = {1000,     },
   \textquotedblright
       = {    , 1000},
   \quotedblbase
+      = {1000,     },
+  % Single Quotes
+  \textquoteleft
+      = {1000,     },
+  \textquoteright
+      = {    , 1000},
+  \quotesinglbase
       = {1000,     }
 }
 
