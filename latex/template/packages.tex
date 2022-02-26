@@ -6,10 +6,12 @@
 \usepackage[indent=3em, skip]{parskip} % For empty lines between paragraphs
 \usepackage[compact]{titlesec}      % Sets section titles to be more compact
 \usepackage{titling}                % In order to make the title higher on page
-\usepackage{fancyhdr}               % For fancy headings
-\usepackage{lastpage}               % Gives us \lastpage
 
-% Both hyperref and xcolor are loaded by pdfx
+% We inject any additional packages or user configuration here
+\input{configuration.tex}
+
+% Both hyperref and xcolor are loaded by pdfx. These packages must
+% be loaded at the very end of the load order chain.
 % \usepackage{hyperref}               % So citations can be links
 % \usepackage{xcolor}                 % To make URL links blue
 \usepackage[a-3u, mathxmp]{pdfx}    % PDF/A Compatibility  
