@@ -10,12 +10,12 @@
   \renewcommand{\headrulewidth}{0.4pt}
   \fancyhead[L]{Senior Seminar}
   \fancyhead[C]{}
-  \fancyhead[R]{St. John's College}
+  \fancyhead[R]{St.\ John's College}
 
   % Fancy Footer Formatting
   \renewcommand{\footrulewidth}{0pt}
   \fancyfoot[L]{}
-  \fancyfoot[C]{Page \thepage\ of \pageref*{LastPage}}
+  \fancyfoot[C]{Page \thepage\ of~\pageref*{LastPage}}
   \fancyfoot[R]{}
 }
 % Update the plain heading format so that the first page includes page n of m
@@ -26,7 +26,7 @@
   \renewcommand{\footrulewidth}{0pt}
 
   % Ensure page numbers are the form page n of m.
-  \fancyfoot[C]{Page \thepage\ of \pageref*{LastPage}}
+\fancyfoot[C]{Page \thepage\ of\pageref*{LastPage}}
 }
 % Set the document header-footer pagestyle to fancy, from above
 \pagestyle{fancy}

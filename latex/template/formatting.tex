@@ -1,3 +1,21 @@
+% chktex-file 1 chktex-file 9 chktex-file 26 chktex-file 18
+% Settings used by fontspec
+% Enable additional font features (such as fancy ligatures)
+\defaultfontfeatures+{
+    Script=Latin,
+    Language=Default,
+    % Common, Contextual, Rare, Historic, TeX
+    Ligatures={Common, Discretionary, Historic},
+    % Swash, Alternate, WordInitial, WordFinal, LineFinal, Inner
+    Contextuals={Alternate},
+    Letters = Uppercase,
+    StylisticSet={1,3,7},
+    RawFeature=+ccmp,
+    Kerning = {On, Uppercase},
+    Diacritics = {MarkToBase}
+}
+\setmainfont{LibertinusSerif}
+
 % Settings used by \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
