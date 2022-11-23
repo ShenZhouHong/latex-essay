@@ -1,5 +1,5 @@
 # Shen's LaTeX Essay Template
-This is my LaTeX Essay Template. It is a best-in-class LuaLaTeX template for writing essays, dissertations, documents, and papers in the academic humanities.
+This is my LaTeX Essay Template. It is a best-in-class LuaLaTeX template for writing essays, dissertations, documents, and papers in the academic humanities. It includes a custom LaTeX `documentclass` called `humanize`, which is based off the `article` class, and contains all of the custom styling and configuration.
 
 ![Example of documents created using this template](./collage-4.jpg)
 
@@ -16,36 +16,35 @@ This template uses a number of advanced LaTeX features.
 This git repository is set as a template. Simply clone the template, and begin. The root document is located at `./latex/paper.tex`. The `documentclass`, `\Title`, `\Author`, and `\Date` fields can be modified there.
 
 
-To compile the document, simply enter the `latex` directory, and run `make`:
+To compile the document, simply run `make`:
 
 ```
-cd latex
 make
 ```
 
 ## Documentation
-This template is broadly organized into three directories. `template` contains template files. `sections` contain the body of the text. `figures` contains figures, diagrams, and graphs. 
+This template is broadly organized into two directories. `sections` contain the body of the text. `figures` contains additional templates for figures, diagrams, and graphs. 
 
 ```
 .
-├── example.png
+├── collage-4.jpg
 ├── latex
-│   ├── citations.bib
-│   ├── configuration.tex
-│   ├── figures
-│   │   ├── template-*.tex
-│   │   └── ...
-│   ├── makefile
-│   ├── paper.pdf
-│   ├── paper.tex
-│   ├── paper.xmpdata
-│   ├── sections
-│   │   ├── body.tex
-│   │   └── endpage.tex
-│   └── template
-│       ├── formatting.tex
-│       └── packages.tex
+│   ├── figures
+│   │   └── template-*.tex
+│   ├── humanize.cls
+│   ├── betterprotrusionboundary.lua
+│   ├── configuration.tex
+│   ├── mt-protrusion.cfg
+│   ├── citations.bib
+│   ├── paper.pdf
+│   ├── paper.tex
+│   ├── paper.xmpdata
+│   ├── makefile
+│   └── sections
+│       ├── body.tex
+│       └── endpage.tex
 ├── LICENSE.md
+├── makefile
 └── README.md
 
 ```
@@ -55,12 +54,6 @@ The body of the text is meant to be included in the `./latex/sections` directory
 Metadata for the PDF must be configured in the `./latex/paper.xmpdata` file. This file is read by the `pdfx` package, and information within is used to generate a valid, standard-conformant PDF/A-3u document.
 
 The header, footer, and additional packages can be configured in `./latex/configurations.tex`. Biblatex, as well as a set of commonly used packages for mathematics and sciences are included as comments.
-
-All the template files are located within the `./latex/template` directory. `packages.tex` defines the load order of packages included in the document's preamble. User-configured packages from `configurations.tex` are `\input`-ed into the middle of `packages.tex`, in order to preserve the load-order of packages.
-
-Template configuration (typography, sections, and hyperlink setup) are located within `./latex/template/formatting.tex`. The options here are not expected to be modified.
-
-Citations for `biblatex` can be added in `./latex/citations.bib`. The biblatex package can be enabled by uncommenting the relevant package includes in `./latex/configurations.tex`. An example bibliography is also available as a comment in `./latex/sections/endpage.tex`.
 
 ## Dependencies
 This template depends on the following programs:
