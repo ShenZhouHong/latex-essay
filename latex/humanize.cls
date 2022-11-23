@@ -2,68 +2,53 @@
 \NeedsTeXFormat{LaTeX2e}[2021/11/15]
 \ProvidesClass{humanize}[2021/11/15 v1.00 Humanize Custom LaTeX Article Class]
 
-% First we load our base article class, as humanize is based upon article
-\LoadClass{article}
-
-% General packages in use
-\RequirePackage{fontspec}                 % LuaLaTeX font support
-\RequirePackage{babel}
-\RequirePackage{libertinus-otf}           % Beautiful libertinus font
-\RequirePackage{microtype}
-\RequirePackage[pass]{geometry}           % Adjusts for narrower page margins
-\RequirePackage[autopunct]{csquotes}      % For more advanced quotations
-\RequirePackage{setspace}                 % Used to change line and paragraph spacing
-\RequirePackage[indent=3em, skip]{parskip}% For empty lines between paragraphs
-\RequirePackage[compact]{titlesec}        % Sets section titles to be more compact
-\RequirePackage{titling}                  % In order to make the title higher on page
-
 % Options made available used by \RequirePackage{setspace}
 \DeclareOption{singlespacing}{%
-  \singlespacing
+  \AtEndOfClass{\singlespacing}
   \ClassInfo{humanize}{Line spacing set to 1.0}
 }
 \DeclareOption{onehalfspacing}{%
-  \onehalfspacing
+  \AtEndOfClass{\onehalfspacing}
   \ClassInfo{humanize}{Line spacing set to 1.5}
 }
 \DeclareOption{doublespacing}{%
-  \doublespacing
+  \AtEndOfClass{\doublespacing}
   \ClassInfo{humanize}{Line spacing set to 2.0}
 }
 
 % Options for left-margin protruded number labels
 \DeclareOption{protrudelabels}{%
-  % First, we implement protrusion for numerical section and subsection labels
-  \newcommand{\marginsecnumber}[1]{%
-    \makebox[0pt][r]{#1\hspace{6pt}}%
+  \AtEndOfClass{
+    % First, we implement protrusion for numerical section and subsection labels
+    \newcommand{\marginsecnumber}[1]{%
+      \makebox[0pt][r]{#1\hspace{6pt}}%
+    }
+    \titleformat{\section}
+      {\normalfont\Large\bfseries}
+      {\marginsecnumber\thesection}
+      {0pt}
+      {}
+    \titleformat{\subsection}
+      {\normalfont\large\bfseries}
+      {\marginsecnumber\thesubsection}
+      {0pt}
+      {}
+    \titleformat{\subsubsection}
+      {\normalfont\normalsize\bfseries}
+      {\marginsecnumber\thesubsubsection}
+      {0pt}
+      {}
+    \titleformat{\paragraph}[runin]
+      {\normalfont\normalsize\bfseries}
+      {\marginsecnumber\theparagraph}
+      {0pt}
+      {}
+    \titleformat{\subparagraph}[runin]
+      {\normalfont\normalsize\bfseries}
+      {\marginsecnumber\thesubparagraph}
+      {0pt}
+      {}
   }
-  \titleformat{\section}
-    {\normalfont\Large\bfseries}
-    {\marginsecnumber\thesection}
-    {0pt}
-    {}
-  \titleformat{\subsection}
-    {\normalfont\large\bfseries}
-    {\marginsecnumber\thesubsection}
-    {0pt}
-    {}
-  \titleformat{\subsubsection}
-    {\normalfont\normalsize\bfseries}
-    {\marginsecnumber\thesubsubsection}
-    {0pt}
-    {}
-  \titleformat{\paragraph}[runin]
-    {\normalfont\normalsize\bfseries}
-    {\marginsecnumber\theparagraph}
-    {0pt}
-    {}
-  \titleformat{\subparagraph}[runin]
-    {\normalfont\normalsize\bfseries}
-    {\marginsecnumber\thesubparagraph}
-    {0pt}
-    {}
-
-  % Next, we implement protrusion for ieee-style bibliography labels
   \AtBeginDocument{
     % Check first if biblatex is loaded with ieee-style citations
     \IfPackageLoadedWithOptionsTF{biblatex}{style=ieee}{%
@@ -95,13 +80,15 @@
 
 % Next, we declare options for hanging punctuation.
 \DeclareOption{hangingpunct}{%
-  % This is done by passing a custom config file to microtype
-  \LoadMicrotypeFile{protrusion}
-  % Fix microtype hanging punctuation protrusion boundaries. See
-  % https://tex.stackexchange.com/a/629080
-  \directlua{dofile("betterprotrusionboundary.lua")}
-  \renewcommand\leftprotrusion{\betterprotrusionboundary1\relax}
-  \ClassInfo{humanize}{Hanging punctuation enabled}
+  \AtEndOfClass{
+    % This is done by passing a custom config file to microtype
+    \LoadMicrotypeFile{protrusion}
+    % Fix microtype hanging punctuation protrusion boundaries. See
+    % https://tex.stackexchange.com/a/629080
+    \directlua{dofile("betterprotrusionboundary.lua")}
+    \renewcommand\leftprotrusion{\betterprotrusionboundary1\relax}
+    \ClassInfo{humanize}{Hanging punctuation enabled}
+  }
 }
 \DeclareOption{nohangingpunct}{%
   \ClassInfo{humanize}{Hanging punctuation disabled}
@@ -109,9 +96,11 @@
 
 % Options for additional decorative ligatures in libertinus-otf
 \DeclareOption{extraligatures}{%
-  \defaultfontfeatures+{
-    % Options are: Common, Contextual, Rare, Historic, TeX
-    Ligatures={Common, Discretionary, Historic}
+  \AtEndOfClass{
+    \defaultfontfeatures+{
+      % Options are: Common, Contextual, Rare, Historic, TeX
+      Ligatures={Common, Discretionary, Historic}
+    }
   }
   \ClassInfo{humanize}{Historical ligatures enabled}
 }
@@ -149,6 +138,22 @@
 
 % Now we process options belonging to the user
 \ProcessOptions\relax
+
+% First we load our base article class, as humanize is based upon article
+\LoadClass{article}
+
+% General packages in use
+\RequirePackage{fontspec}                 % LuaLaTeX font support
+\RequirePackage{babel}
+\RequirePackage{libertinus-otf}           % Beautiful libertinus font
+\RequirePackage{microtype}
+\RequirePackage[pass]{geometry}           % Adjusts for narrower page margins
+\RequirePackage[autopunct]{csquotes}      % For more advanced quotations
+\RequirePackage{setspace}                 % Used to change line and paragraph spacing
+\RequirePackage[indent=3em, skip]{parskip}% For empty lines between paragraphs
+\RequirePackage[compact]{titlesec}        % Sets section titles to be more compact
+\RequirePackage{titling}                  % In order to make the title higher on page
+
 
 % Finally, we begin some misc. configuration
 
