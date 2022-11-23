@@ -5,20 +5,6 @@
 \usepackage{fancyhdr}               % For fancy headings
 \usepackage{lastpage}               % Gives us \lastpage
 % Settings used by \usepackage{fancyhdr}
-\fancypagestyle{fancy}{
-  % Fancy Header Formatting
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancyhead[L]{Senior Seminar}
-  \fancyhead[C]{}
-  \fancyhead[R]{St.\ John's College}
-
-  % Fancy Footer Formatting
-  \renewcommand{\footrulewidth}{0pt}
-  \fancyfoot[L]{}
-  \fancyfoot[C]{Page \thepage\ of~\pageref*{LastPage}}
-  \fancyfoot[R]{}
-}
-% Update the plain heading format so that the first page includes page n of m
 \fancypagestyle{plain}{
   % Clear all definitions from the fancy pagestyle
   \fancyhf{}
@@ -26,8 +12,22 @@
   \renewcommand{\footrulewidth}{0pt}
 
   % Ensure page numbers are the form page n of m.
-\fancyfoot[C]{Page \thepage\ of\pageref*{LastPage}}
+  \fancyfoot[C]{Page~\thepage~of~\pageref*{LastPage}}
 }
+\fancypagestyle{fancy}{
+  % Fancy Header Formatting
+  \renewcommand{\headrulewidth}{0.4pt}
+  \fancyhead[L]{LaTeX Template}
+  \fancyhead[C]{}
+  \fancyhead[R]{Humanize}
+
+  % Fancy Footer Formatting
+  \renewcommand{\footrulewidth}{0pt}
+  \fancyfoot[L]{}
+  \fancyfoot[C]{Page~\thepage~of~\pageref*{LastPage}}
+  \fancyfoot[R]{}
+}
+% Update the plain heading format so that the first page includes page n of m
 % Set the document header-footer pagestyle to fancy, from above
 \pagestyle{fancy}
 
@@ -52,6 +52,7 @@
 % \usepackage{float}                  % For arranging floats
 % \usepackage{graphicx}               % Required for embedding images
 % \usepackage{booktabs}               % For prettier tables
+% \usepackage{tabularx}               % Auto scale tables to \textwidth
 % \usepackage{geometry}               % Sets more "reasonable" margin-sizes
 % \usepackage{xeCJK}                  % For typesetting CJK characters
 % \usepackage[l2tabu, orthodox]{nag}  % Verbose warnings for typesetting
@@ -81,19 +82,8 @@
 % \addtolength{\headwidth}{\marginparsep}
 % \addtolength{\headwidth}{\marginparwidth}
 
-% Settings used by \usepackage{pgfplots}
-% \pgfplotsset{compat=1.17}
-% \pgfplotsset{samples=300}
-
 % The biblatex package should go last!
-% FYI: the biblatex package is used to generate a bibliography. However, unless
-% intense citation management (e.g. 5+ sources) is used, biblatex should not
-% be loaded, as it slows down the document compilation process by almost 2X.
-% In order to enable it, see sections/endpage.tex and essay-name.tex's preamble
-%
-% \usepackage[style=mla, backend=biber]{biblatex} % Nice MLA bibliography
-% \addbibresource{citations.bib} % Biblatex. See includes/formatting.tex
-% \SetCiteCommand{\autocite} % For use with csquotes, where you can do:
-% % \textcquote[175]{key}{quoted text here}
+% \usepackage[style=ieee]{biblatex} 
+% \addbibresource{citations.bib}
 
 % Any additional user configuration goes below

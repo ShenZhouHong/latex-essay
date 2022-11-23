@@ -17,17 +17,13 @@
 % For more information on documentclass configuration, see:
 % https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/#formula
 \documentclass[
-  10pt,       % 10pt, 11pt, 12pt
-  letterpaper,    % a4paper, letterpaper, a5paper, b5paper, executivepaper, legalpaper
-  final,      % draft
-  onecolumn,  % twocolumn
-  oneside,    % twoside
-  notitlepage % titlepage
-]{article}
+  protrudelabels,
+  onehalfspacing,
+  extraligatures,
+  english
+]{humanize}
 
-% Template preamble files. These should not be modified.
-\input{template/packages.tex}
-\input{template/formatting.tex}
+\input{configuration.tex}
 
 % Document Title, Author, and Date
 \title{
