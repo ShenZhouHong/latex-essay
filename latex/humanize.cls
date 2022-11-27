@@ -184,6 +184,14 @@
 % Settings for csquotes
 \MakeOuterQuote{"}
 
+% Set indentation for quotes to be at the same level as that of \parindent
+\renewenvironment{quote}{%
+  \small\list{}{\rightmargin=\parindent \leftmargin=\parindent}%
+   \item\relax
+}{%
+  \endlist
+}
+
 % Some Final Late-Loading packages
 \RequirePackage[a-3u, mathxmp]{pdfx}
 
