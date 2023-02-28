@@ -153,7 +153,7 @@
 \RequirePackage[indent=3em, skip]{parskip}% For empty lines between paragraphs
 \RequirePackage[compact]{titlesec}        % Sets section titles to be more compact
 \RequirePackage{titling}                  % In order to make the title higher on page
-\RequirePackage[]{enumitem}               % Customize itemize and enumerate environments
+\RequirePackage{enumitem}                 % Customize itemize and enumerate environments
 
 
 % Finally, we begin some misc. configuration
