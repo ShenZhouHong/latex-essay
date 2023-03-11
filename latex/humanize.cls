@@ -105,6 +105,14 @@
   \ClassInfo{humanize}{Historical ligatures enabled}
 }
 
+% Option to enable/disable the geometry package's narrower margins
+\DeclareOption{widemargins}{%
+  \AtEndOfClass{
+    \geometry{pass}
+  }
+  \ClassInfo{humanize}{Enabling geometry package's larger margins}
+}
+
 % Pass any other undeclared options to base article documentclass
 \DeclareOption*{
   \PassOptionsToClass{\CurrentOption}{article}
@@ -147,7 +155,7 @@
 \RequirePackage{babel}                    % Multiple languages and metadata support
 \RequirePackage{libertinus-otf}           % Beautiful libertinus font
 \RequirePackage{microtype}                % Microtypography adjustments
-\RequirePackage[pass]{geometry}           % Adjusts for narrower page margins
+\RequirePackage{geometry}                 % Adjusts for narrower page margins
 \RequirePackage[autopunct]{csquotes}      % For more advanced quotations
 \RequirePackage{setspace}                 % Used to change line and paragraph spacing
 \RequirePackage[indent=3em, skip]{parskip}% For empty lines between paragraphs
