@@ -1,6 +1,6 @@
 % Humanize: An Opinionated LaTeX Template for the Humanities
 \NeedsTeXFormat{LaTeX2e}[2021/11/15]
-\ProvidesClass{humanize}[2021/11/15 v1.00 Humanize Custom LaTeX Article Class]
+\ProvidesClass{humanize}[2021/11/15 v1.00 Humanize Custom LaTeX Report Class]
 
 % Options made available used by \RequirePackage{setspace}
 \DeclareOption{singlespacing}{%
@@ -115,7 +115,7 @@
 
 % Pass any other undeclared options to base article documentclass
 \DeclareOption*{
-  \PassOptionsToClass{\CurrentOption}{article}
+  \PassOptionsToClass{\CurrentOption}{report}
 }
 
 \AtBeginDocument{%
@@ -127,7 +127,7 @@
   % Check if pgfplots package is loaded.
   \IfPackageLoadedTF{pgfplots}{
     % If so, disable legacy compatibility options and increase sample size
-    \pgfplotsset{compat=1.17}
+    \pgfplotsset{compat=1.18}
     \pgfplotsset{samples=300}
   }{}
 }
@@ -147,8 +147,8 @@
 % Now we process options belonging to the user
 \ProcessOptions\relax
 
-% First we load our base article class, as humanize is based upon article
-\LoadClass{article}
+% First we load our base report class, as humanize is based upon report
+\LoadClass{report}
 
 % General packages in use
 \RequirePackage{fontspec}                 % LuaLaTeX font support
