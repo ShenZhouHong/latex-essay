@@ -83,10 +83,6 @@
   \AtEndOfClass{
     % This is done by passing a custom config file to microtype
     \LoadMicrotypeFile{protrusion}
-    % Fix microtype hanging punctuation protrusion boundaries. See
-    % https://tex.stackexchange.com/a/629080
-    \directlua{dofile("betterprotrusionboundary.lua")}
-    \renewcommand\leftprotrusion{\betterprotrusionboundary1\relax}
     \ClassInfo{humanize}{Hanging punctuation enabled}
   }
 }
